@@ -1,18 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
+import { YoutubeTopVideoComponent } from './youtube-top-video/youtube-top-video.component';
+import { YoutubeApiService } from './youtube-api.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    YoutubeTopVideoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    YoutubeApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
