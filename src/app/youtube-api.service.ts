@@ -5,6 +5,7 @@ import { tap } from 'rxjs/operators';
 // I would and should use a ConfigService to manage properly but for now let's focus on the mission
 import { environment } from '../environments/environment';
 import { TopVideo } from './model/topVideo';
+import { Video } from './model/video';
 
 @Injectable()
 export class YoutubeApiService {
@@ -21,5 +22,13 @@ export class YoutubeApiService {
         tap(data => console.log(data))
       );
       // TODO add pipe / tap process and handle errors
+  }
+
+  getVideoInfo(videoId: string) {
+    return this.http.get<Video>(`${this.url}/youtube/video/${videoId}`)
+      .pipe(
+        tap(data => console.log(data))
+      );
+    // TODO add pipe / tap process and handle errors
   }
 }

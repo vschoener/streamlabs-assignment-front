@@ -1,0 +1,47 @@
+
+<div class="row mt-5">
+
+  <div *ngIf="currentVideo; else noVideo">
+    <h2>Channel: {{topVideo.title}}</h2>
+
+    <div class="row">
+      <table class="table table-striped">
+          <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Channel ID</th>
+                <th scope="col">Current Concurrent Views</th>
+                <th scope="col">Total Views</th>
+                <th scope="col">Total Like</th>
+                <th scope="col">Total Dislike</th>
+                <th scope="col">Publish at</th>
+                <th scope="col">Live chat ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">{{topVideo.videoId}}</th>
+                <td>{{topVideo.channelId}}</td>
+                <td>{{currentVideo.liveStreamingDetails.concurrentViewers}}</td>
+                <td>{{currentVideo.statistics.viewCount}}</td>
+                <td>{{currentVideo.statistics.likeCount}}</td>
+                <td>{{currentVideo.statistics.dislikeCount}}</td>
+                <td>{{topVideo.publishedAt}}</td>
+                <td>
+                  <div *ngIf="currentVideo.liveStreamingDetails.activeLiveChatId; else noLiveChatID">
+                      <a href="#chat" (click)="ngOnSelectChatId(currentVideo.liveStreamingDetails.activeLiveChatId)">Display Chat</a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+      </table>
+    </div>
+  </div>
+  <ng-template #noVideo>
+    <div class="alert alert-info">
+      Please select a video
+   </div>
+  </ng-template>
+
+  <ng-template #noLiveChatID><td> No Live Chat</td></ng-template>
+</div>

@@ -4,12 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { YoutubeTopVideoComponent } from './youtube-top-video/youtube-top-video.component';
 import { YoutubeApiService } from './youtube-api.service';
+import { YoutubeVideoComponent } from './youtube-video/youtube-video.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    YoutubeTopVideoComponent
+    YoutubeTopVideoComponent,
+    YoutubeVideoComponent
   ],
   imports: [
     BrowserModule,
