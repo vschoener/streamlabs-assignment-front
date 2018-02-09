@@ -1,0 +1,13 @@
+.chat div:nth-child(even) span {
+  color: cornflowerblue;
+  font-weight: bold;
+}
+.chat div:nth-child(odd) span {
+  color: rgb(121, 100, 237);
+  font-weight: bold;
+}
+
+.chat {
+  max-height: 300px;
+  overflow: auto;
+}

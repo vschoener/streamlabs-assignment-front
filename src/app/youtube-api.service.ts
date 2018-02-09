@@ -6,6 +6,7 @@ import { tap } from 'rxjs/operators';
 import { environment } from '../environments/environment';
 import { TopVideo } from './model/topVideo';
 import { Video } from './model/video';
+import { Chat } from './model/chat';
 
 @Injectable()
 export class YoutubeApiService {
@@ -26,6 +27,14 @@ export class YoutubeApiService {
 
   getVideoInfo(videoId: string) {
     return this.http.get<Video>(`${this.url}/youtube/video/${videoId}`)
+      .pipe(
+        tap(data => console.log(data))
+      );
+    // TODO add pipe / tap process and handle errors
+  }
+
+  getChat(chatId: string, nextPageToken: string) {
+    return this.http.get<Chat>(`${this.url}/youtube/chat/${chatId}`)
       .pipe(
         tap(data => console.log(data))
       );

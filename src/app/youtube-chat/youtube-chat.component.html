@@ -1,0 +1,5 @@
+<div *ngIf="chat" class="chat">
+  <div *ngFor="let message of chat.messages">
+    <span>{{message.author}}:</span> {{message.displayMessage}}
+  </div>
+</div>

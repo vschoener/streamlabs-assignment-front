@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { YoutubeTopVideoComponent } from './youtube-top-video/youtube-top-video.component';
 import { YoutubeApiService } from './youtube-api.service';
 import { YoutubeVideoComponent } from './youtube-video/youtube-video.component';
+import { YoutubeChatComponent } from './youtube-chat/youtube-chat.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     YoutubeTopVideoComponent,
-    YoutubeVideoComponent
+    YoutubeVideoComponent,
+    YoutubeChatComponent
   ],
   imports: [
     BrowserModule,
