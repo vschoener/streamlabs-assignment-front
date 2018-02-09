@@ -1,3 +1,40 @@
+# Youtube Client
+
+Manage UI interface for the final user. It will use the Youtube API as his main backend service to retrieve information
+
+## Docker
+
+You can use the basic docker / docker-compose command, but you should use the Makefile command, it contains the basics often used.
+
+### Build and Install
+
+To install your project inside the container, use
+```bash
+make build
+make install
+```
+
+### Run
+
+Let's run the container
+```bash
+make start
+```
+
+### Customize
+In case you want to customize the services settings create a docker-compose.override.yml file and apply your needs.
+
+## Locally
+
+This project can be run on your computer if you have the necessaries tools / lib installed. It required Node.js / NPM and of course the command line interface of Angular.
+
+### Install and Run
+```bash
+npm install && npm start
+```
+
+# Extra Angular Information
+
 # Client
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
