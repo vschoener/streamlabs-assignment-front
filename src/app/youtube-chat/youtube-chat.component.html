@@ -1,5 +1,5 @@
 <div *ngIf="chat" class="chat">
   <div *ngFor="let message of chat.messages">
-    <span>{{message.author}}:</span> {{message.displayMessage}}
+    <span><a href="{{message.channelUrl}}" target="_blank">{{message.author}}</a>:</span>{{message.displayMessage}}
   </div>
 </div>

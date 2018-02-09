@@ -1,12 +1,14 @@
 /* It would be better to uses Sass system */
 
 ul.topVideos {
-  padding: 20px;
+  padding: 10px;
+  background: #4e4e4e;
+  border-radius: 5px;
 }
 
 ul.topVideos li {
   cursor: pointer;
-  background-color: #EEE;
+  background-color: whitesmoke;
   margin: .5em;
   padding: .3em;
   border-radius: 4px;

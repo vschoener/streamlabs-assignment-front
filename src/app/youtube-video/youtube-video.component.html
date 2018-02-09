@@ -1,10 +1,14 @@
 
-<div class="row mt-5">
+<div *ngIf="!currentVideo" class="row align-items-center h-100">
+  <div  class="col text-center alert alert-info">
+      Please select a video
+  </div>
+</div>
+<div>
+  <div *ngIf="currentVideo" class="row">
 
-  <div *ngIf="currentVideo; else noVideo">
-    <h2>Channel: {{topVideo.title}}</h2>
-
-    <div class="row">
+    <div class="col">
+      <h2>Channel: {{topVideo.title}}</h2>
       <table class="table table-striped">
           <thead>
               <tr>
@@ -37,11 +41,6 @@
       </table>
     </div>
   </div>
-  <ng-template #noVideo>
-    <div class="alert alert-info">
-      Please select a video
-   </div>
-  </ng-template>
 
   <ng-template #noLiveChatID><td> No Live Chat</td></ng-template>
 </div>

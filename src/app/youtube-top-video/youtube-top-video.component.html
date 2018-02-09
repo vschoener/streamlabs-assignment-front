@@ -1,5 +1,6 @@
+
 <div class="row mt-5">
-  <div class="col">
+  <div class="col-lg-3">
     <h2>Top Live Video on youtube</h2>
     <p>Select one to get more information about</p>
     <ul class="list-group topVideos">
@@ -10,6 +11,7 @@
       </li>
     </ul>
   </div>
+  <div class="col-lg-9">
+    <app-youtube-video [topVideo]="selectedVideo"></app-youtube-video>
+  </div>
 </div>
-
-<app-youtube-video [topVideo]="selectedVideo"></app-youtube-video>

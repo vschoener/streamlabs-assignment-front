@@ -1,8 +1,8 @@
-.chat div:nth-child(even) span {
+.chat div:nth-child(even) span > a {
   color: cornflowerblue;
   font-weight: bold;
 }
-.chat div:nth-child(odd) span {
+.chat div:nth-child(odd) span > a {
   color: rgb(121, 100, 237);
   font-weight: bold;
 }
