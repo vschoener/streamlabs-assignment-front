@@ -1,5 +1,8 @@
-<div *ngIf="chat" class="chat">
-  <div *ngFor="let message of chat.messages">
-    <span><a href="{{message.channelUrl}}" target="_blank">{{message.author}}</a>:</span>{{message.displayMessage}}
+<div *ngIf="chat">
+  <span class="badge badge-info"> Message rate is: {{messageRateBySeconds}}/s</span>
+  <div class="chat mt-2">
+    <div *ngFor="let message of chat.messages">
+      <span><a href="{{message.channelUrl}}" target="_blank">{{message.author}}</a>:</span>{{message.displayMessage}}
+    </div>
   </div>
 </div>

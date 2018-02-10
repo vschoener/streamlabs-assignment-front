@@ -11,6 +11,7 @@ export class YoutubeChatComponent implements OnInit, OnChanges {
   @Input() chatId: string;
   nextPageToken: string;
   chat: Chat;
+  messageRateBySeconds: number;
 
   constructor(private youtubeApiService: YoutubeApiService) { }
 
@@ -23,6 +24,9 @@ export class YoutubeChatComponent implements OnInit, OnChanges {
     }
 
     this.youtubeApiService.getChat(this.chatId, this.nextPageToken)
-      .subscribe(data => this.chat = data);
+      .subscribe(data => {
+        this.chat = data;
+        this.messageRateBySeconds = this.youtubeApiService.calculateRateMessageInSecond(data.messages);
+      });
   }
 }
