@@ -1,17 +1,9 @@
-
-<div class="row mt-5">
-  <div class="col-lg-3">
-    <h2>Top Live Video on youtube</h2>
-    <p>Select one to get more information about</p>
-    <ul class="list-group topVideos">
-      <li *ngFor="let video of topVideos"
-        [class.selected]="video === selectedVideo"
-        (click)="onSelectTopVideo(video)">
-        {{ video.title }}
-      </li>
-    </ul>
-  </div>
-  <div class="col-lg-9">
-    <app-youtube-video [topVideo]="selectedVideo"></app-youtube-video>
-  </div>
-</div>
+<h2>Top Live Video on youtube</h2>
+<p>Select one to get more information about</p>
+<ul class="list-group topVideos">
+  <li *ngFor="let video of topVideos"
+    [class.selected]="video === selectedVideo"
+    (click)="onSelectTopVideo(video)">
+    {{ video.title }}
+  </li>
+</ul>

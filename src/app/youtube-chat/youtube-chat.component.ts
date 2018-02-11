@@ -19,7 +19,15 @@ export class YoutubeChatComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.chatId.previousValue !== undefined && changes.chatId.previousValue === changes.topVideo.currentValue) {
+
+    if (!this.chatId || !this.chatId.length) {
+      this.chat = new Chat();
+      this.messageRateBySeconds = 0;
+      return ;
+    }
+
+    // Avoid to call the API again if we already have the information
+    if (changes.chatId.previousValue === changes.chatId.currentValue) {
       return;
     }
 

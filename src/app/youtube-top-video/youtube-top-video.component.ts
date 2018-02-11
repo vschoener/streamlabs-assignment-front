@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { YoutubeApiService } from '../youtube-api.service';
 import { TopVideo } from '../model/topVideo';
 
@@ -10,7 +10,8 @@ import { TopVideo } from '../model/topVideo';
 export class YoutubeTopVideoComponent implements OnInit {
 
   topVideos: TopVideo[];
-  selectedVideo: TopVideo;
+
+  @Output() topVideoOutputEvent: EventEmitter<TopVideo> = new EventEmitter<TopVideo>();
 
   constructor(private youtubeApiService: YoutubeApiService) { }
 
@@ -24,6 +25,6 @@ export class YoutubeTopVideoComponent implements OnInit {
   }
 
   onSelectTopVideo(video: TopVideo): void {
-    this.selectedVideo = video;
+    this.topVideoOutputEvent.emit(video);
   }
 }

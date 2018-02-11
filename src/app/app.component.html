@@ -1,4 +1,17 @@
 <div class="container-fluid">
   <h1 class="text-center">{{title}}</h1>
-  <app-youtube-top-video></app-youtube-top-video>
+
+<div class="row mt-5">
+    <div class="col-lg-3">
+      <app-youtube-top-video
+        (topVideoOutputEvent)=receiveMessageEvent($event)></app-youtube-top-video>
+    </div>
+    <div class="col-lg-9">
+        <app-youtube-video
+          (chatIdOutputEvent)=receiveChatIdEvent($event)
+          [topVideo]="selectedTopVideo">
+        </app-youtube-video>
+        <app-youtube-chat [chatId]="selectedChatId"></app-youtube-chat>
+    </div>
+  </div>
 </div>
