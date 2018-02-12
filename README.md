@@ -33,6 +33,10 @@ This project can be run on your computer if you have the necessaries tools / lib
 npm install && npm start
 ```
 
+# App Preview
+<img width="1671" alt="screen shot 2018-02-12 at 00 55 49" src="https://user-images.githubusercontent.com/1213200/36080466-d4d195da-0f90-11e8-8c7a-30b69fd2b360.png">
+
+
 # Extra Angular Information
 
 # Client
