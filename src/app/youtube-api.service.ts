@@ -21,7 +21,7 @@ export class YoutubeApiService {
   getTopLiveVideo() {
     return this.http.get<TopVideo[]>(`${this.url}/youtube/live/topVideos`)
       .pipe(
-        tap(data => console.log(data))
+        tap(data => this.debugMessage(data))
       );
       // TODO add pipe / tap process and handle errors
   }
@@ -29,7 +29,7 @@ export class YoutubeApiService {
   getVideoInfo(videoId: string) {
     return this.http.get<Video>(`${this.url}/youtube/video/${videoId}`)
       .pipe(
-        tap(data => console.log(data))
+        tap(data => this.debugMessage(data))
       );
     // TODO add pipe / tap process and handle errors
   }
@@ -37,7 +37,7 @@ export class YoutubeApiService {
   getChat(chatId: string, nextPageToken: string) {
     return this.http.get<Chat>(`${this.url}/youtube/chat/${chatId}`)
       .pipe(
-        tap(data => console.log(data)),
+        tap(data => this.debugMessage(data)),
         map(data => {
           data.messages = data.messages.map(message => {
             // TSLint display an error over the Date type but it's not
@@ -63,5 +63,12 @@ export class YoutubeApiService {
         });
 
         return messages.length / messageBySeconds.length;
+  }
+
+  // TODO: Create a service for any other component that need to dump message that way
+  private debugMessage(message) {
+    if (!environment.production) {
+      console.log(message);
+    }
   }
 }
